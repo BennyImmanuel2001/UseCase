@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+
+
+
+    
+    <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://static.freshdev.io/fdk/2.0/assets/freshdesk.css" />
+    
+    <script type="text/javscript" src="../scripts/app.js"></script>
+    <script type="text/javscript" src="./replyModal.js"></script>
+
+    <script type="module"  src="https://unpkg.com/@freshworks/crayons/dist/crayons/crayons.esm.js"></script>
+    <script  nomodule  src="https://unpkg.com/@freshworks/crayons/dist/crayons/crayons.js"></script>
+    
+    <link href="../styles/style.css" rel="stylesheet"  />
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+<body>
+  <script src="../scripts/app.js"> </script>
+  <script src="./replyModal.js"> </script>
+  <div class="testForm">
+  
+
+
+      
+        <h4 class="form-group__title">Contact Info</h4>
+      <div class="form-group">
+        <label class=" label-field"> To <span class="mandatory-tag">*</span></label>
+        <input type="email"   class="form-control mandatory"  id="toID"/>
+      </div>
+      <div class="form-group dd_container">
+        <label> Cc <span class="mandatory-tag">*</span></label>
+        <!-- <fw-select  id="ccID"  placeholder="Your choices" label="" state-text="" multiple >
+          <fw-select-option value="ajith.r@spritle.com">ajith.r@spritle.com</fw-select-option>
+          <fw-select-option value="arshath.h@spritle.com">arshath.h@spritle.com</fw-select-option>
+          <fw-select-option value="benny.immanuel@spritle.com">benny.immanuel@spritle.com</fw-select-option>
+          <fw-select-option value="dhivya.m@spritle.com">dhivya.m@spritle.com</fw-select-option>
+          <fw-select-option value="lkjh@mnh.com">lkjh@mnh.com</fw-select-option>
+          <fw-select-option value="spritlefresh@gmail.com">spritlefresh@gmail.com</fw-select-option>
+          <fw-select-option value="hs@spritle.com">hs@spritle.com</fw-select-option>
+          <fw-select-option value="jofig20958@dvdoto.com">jofig20958@dvdoto.com</fw-select-option>
+          <fw-select-option value="rdg@wsd.com">rdg@wsd.com</fw-select-option>
+          <fw-select-option value="jyt@hgy.com">jyt@hgy.com</fw-select-option>
+          <fw-select-option value="rajeswaran@spritle.com">rajeswaran@spritle.com</fw-select-option>
+          <fw-select-option value="hgf@dft.com">hgf@dft.com</fw-select-option>
+          <fw-select-option value="shashwat.jain@freshworks.com">shashwat.jain@freshworks.com</fw-select-option>
+          <fw-select-option value="mng@drt.com">mng@drt.com</fw-select-option>
+          <fw-select-option value="saas@spritle.com">saas@spritle.com</fw-select-option>
+          <fw-select-option value="fuy@ert.com">fuy@ert.com</fw-select-option>
+          <fw-select-option value="hhvhvh@qdwef.com">hhvhvh@qdwef.com</fw-select-option>
+          <fw-select-option value="igbjkjvj@jkwvbvbv.com">igbjkjvj@jkwvbvbv.com</fw-select-option>
+          <fw-select-option value="wajag19721@566dh.com">wajag19721@566dh.com</fw-select-option>
+        </fw-select> -->
+      </div>
+      <div class="form-group">
+        <label> Subject <span class="mandatory-tag">*</span></label>
+        <input type="text" class="form-control"   id="subject"></input>
+      </div>
+      <div class="form-group">
+        <label> Message <span class="mandatory-tag">*</span></label>
+        <textarea type="text" class="form-control"   id="Msg"></textarea>
+      </div>
+      
+        <label>Appointment start time <span class="mandatory-tag">*</span></label>
+        <input  type="datetime-local" class="form-control" id='time'/>
+        
+        <label class="no-margin-top" for="Status">Status <span class="mandatory-tag">*</span></label>
+        <select name="Status"  class="form-control"  id="Status">
+       
+        </select> 
+        <br>
+        <label for="Priority">Priority <span class="mandatory-tag">*</span></label>
+        <select class="form-control" name="Priority" id="Priority">
+         
+        </select> 
+        
+        <!-- <button class="btn btn-primary async-button default ember-view" id="ticketSubmit">Submit</button>    -->
+          <br>
+          
+          <!-- <button class="btn btn-secondary" id="test">test</button>         <br>  -->
+
+          <div class="button-holder">
+            <button class="btn btn-primary async-button default ember-view" id="ticketSubmit">Submit</button>   
+            <fw-button id="ticketCancel" color="link"> Cancel </fw-button>
+            <!-- <fw-button id="delbtn" color="link"> del </fw-button> -->
+          </div>
+    
+      
+    
+        
+    </div>
+ 
+
+</body>
+<!-- <script>
+  
+app.initialized().then(function(client){
+   // window.client =client;
+    
+    
+    document.getElementById('ticketCancel').addEventListener('click', function(){
+        client.instance.close();
+    });
+    document.getElementById('test').addEventListener('click', function(){
+        client.instance.close();
+    });
+    
+
+    // client.data.get('loggedInUser').then(function (user) {
+    //     //window.loggedInUserId = user.loggedInUser.id;
+    //     console.log( window.loggedInUserId)
+    // });
+    client.data.get("contact").then (
+        function(data) {
+            console.log("contact")
+            console.log(data.contact)
+          //Success output
+          //data: {contact: {"active": true, ...}}
+        },
+        function(error) {
+          // failure operation
+        }
+        );
+
+    client.data.get("ticket").then (function(data) {
+     console.log("ticket")
+        console.log(JSON.stringify(data.ticket.to_emails[0]))
+
+    });
+});
+
+let submitBtn = document.getElementById('ticketSubmit');
+    submitBtn.addEventListener('click',function ScheduledReply(){
+
+    // let msg = document.getElementById('Msg').value;
+    // let toID = document.getElementById('toID').value;
+    // let ccID = document.getElementById('ccID').value;
+    // let time = document.getElementById('time').value;
+
+    var scheduleName = generateUuid();
+
+    var scheduleData = getFieldValues();
+
+    // let scheduleData= {
+    //     loggedInUserId: loggedInUserId,
+    //     scheduleName: scheduleName,
+    //     scheduleAtUTC: new Date(scheduleData.scheduleAt).toISOString()
+    // }
+
+    client.request.invoke('createSchedule', {
+        scheduleName: scheduleName,
+        scheduleData: scheduleData
+      }).then(function(data) {
+            console.log(data)
+      }, function(err) {
+        console.log(err);
+        sendNotification(DANGER_NOTIFICATION, `Error while creating schedule`);
+    });
+});
+
+
+
+
+
+
+
+
+function validateData(){
+    const FIELDS_TO_VALIDATE = ['subject', 'description', 'contact', 'scheduleAt'];
+
+    let scheduleData = getFieldValues();
+    let isValid = true;
+
+  for (let field of FIELDS_TO_VALIDATE) {
+    if (!scheduleData[field]) {
+      //q(`#${field}-error`).innerHTML = 'Please fill this required field';
+      isValid = false;
+    }
+  }
+
+  if ((new Date(scheduleData.scheduleAt) - new Date(Date.now())) / 1000 / 60 < 10) {
+    //q('#scheduleAt-error').innerHTML = 'Schedule time must be at least 10 minutes in future';
+    isValid = false;
+  }
+
+  if (scheduleData['contact'] && !validEmail(scheduleData['contact'])) {
+    //q('#contact-error').innerHTML = 'Please enter a valid email';
+    isValid = false;
+  }
+}
+  function getFieldValues() {
+    return {
+      subject:"____",
+      description: document.getElementById('Msg').value,
+      contact: document.getElementById('toID').value,
+      status: Number(1),
+      priority: Number(1),
+      scheduleAt: document.getElementById('time').value
+    };
+  }
+
+
+
+  function sendNotification(type, message) {
+    client.instance.send({
+      message: {
+          type: 'showNotification',
+          args: {type: type, message: message}
+        }
+    });
+  }
+  
+  function generateUuid() {
+    function S4() {
+      return ((1+Math.random())*0x10000 | 0).toString(16).substring(1); 
+    }
+  
+    return (S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S4()).toLowerCase();
+  }
+  
+  function validEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+  }
+  
+</script> -->
+
+</html>
+
+
+
+
+  <!-- <div class="icons_container">
+        <button id="createSchedule" >create</button>
+        <button id="listSchedules" >list</button>
+    </div>
+    
+    <div class="send_container">
+
+      
+           <button class="btn btn-secondary" id="ticketCancel">Cancel</button>    
+    </div>
+    <div class="list_container">
+      
+    </div> -->

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://static.freshdev.io/fdk/2.0/assets/freshdesk.css" />
+   
+    <script src="../scripts/updateModal.js"> </script>
+    <script src="./updateModalData.js"> </script>
+
+    <script type="module"  src="https://unpkg.com/@freshworks/crayons/dist/crayons/crayons.esm.js"></script>
+    <script  nomodule  src="https://unpkg.com/@freshworks/crayons/dist/crayons/crayons.js"></script>
+    
+    <link href="../styles/style.css" rel="stylesheet"  />
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+<body>
+
+  <div class="testForm">
+  
+
+  
+      
+        
+      <div class="form-group">
+        <label class=" label-field"> To <span class="mandatory-tag">*</span></label>
+        <input type="email"   class="form-control mandatory" disabled="true"  id="toID"/>
+      </div>
+      <div class="form-group">
+        <label> Cc <span class="mandatory-tag">*</span></label>
+        <fw-select  id="ccID"  placeholder="Your choices" label="" state-text="" multiple >
+          <fw-select-option value="ajith.r@spritle.com">ajith.r@spritle.com</fw-select-option>
+          <fw-select-option value="arshath.h@spritle.com">arshath.h@spritle.com</fw-select-option>
+          <fw-select-option value="benny.immanuel@spritle.com">benny.immanuel@spritle.com</fw-select-option>
+          <fw-select-option value="dhivya.m@spritle.com">dhivya.m@spritle.com</fw-select-option>
+          <fw-select-option value="lkjh@mnh.com">lkjh@mnh.com</fw-select-option>
+          <fw-select-option value="spritlefresh@gmail.com">spritlefresh@gmail.com</fw-select-option>
+          <fw-select-option value="hs@spritle.com">hs@spritle.com</fw-select-option>
+          <fw-select-option value="jofig20958@dvdoto.com">jofig20958@dvdoto.com</fw-select-option>
+          <fw-select-option value="rdg@wsd.com">rdg@wsd.com</fw-select-option>
+          <fw-select-option value="jyt@hgy.com">jyt@hgy.com</fw-select-option>
+          <fw-select-option value="rajeswaran@spritle.com">rajeswaran@spritle.com</fw-select-option>
+          <fw-select-option value="hgf@dft.com">hgf@dft.com</fw-select-option>
+          <fw-select-option value="shashwat.jain@freshworks.com">shashwat.jain@freshworks.com</fw-select-option>
+          <fw-select-option value="mng@drt.com">mng@drt.com</fw-select-option>
+          <fw-select-option value="saas@spritle.com">saas@spritle.com</fw-select-option>
+          <fw-select-option value="fuy@ert.com">fuy@ert.com</fw-select-option>
+          <fw-select-option value="hhvhvh@qdwef.com">hhvhvh@qdwef.com</fw-select-option>
+          <fw-select-option value="igbjkjvj@jkwvbvbv.com">igbjkjvj@jkwvbvbv.com</fw-select-option>
+          <fw-select-option value="wajag19721@566dh.com">wajag19721@566dh.com</fw-select-option>
+        </fw-select>
+        </div>
+      <div class="form-group">
+        <label> Subject <span class="mandatory-tag">*</span></label>
+        <input type="text" class="form-control"   id="subject"></input>
+      </div>
+      <div class="form-group">
+        <label> Message <span class="mandatory-tag">*</span></label>
+        <textarea type="text" class="form-control"   id="Msg"></textarea>
+      </div>
+      
+        <label>Appointment start time</label>
+        <input  type="datetime-local" class="form-control" id='time'/>
+        
+        <label class="no-margin-top" for="Status">Status</label>
+        <select name="Status"  class="form-control"  id="Status">
+       
+        </select> 
+        <br>
+        <label for="Priority">Priority</label>
+        <select class="form-control" name="Priority" id="Priority">
+         
+        </select> 
+        <br>
+        <br>
+        
+        <!-- <button class="btn btn-primary async-button default ember-view" id="ticketSubmit">Submit</button>    -->
+          <br>
+          
+          <!-- <button class="btn btn-secondary" id="test">test</button>         <br>  -->
+
+          <div class="button-holder">
+            <button class="btn btn-primary async-button default ember-view" id="UpdateChanges">Update</button>   
+            <button id="delbtn" color="link"> Delete Event </button>
+            <button id="cancelChanges" color="link"> Cancel </button>
+          </div>
+    
+      
+    
+        
+    </div>
+ 
+
+</body>
+
+
+</html>
+
+
+
+
+  
