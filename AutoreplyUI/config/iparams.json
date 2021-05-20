@@ -8,5 +8,14 @@
         "type_attributes": {
             "product": "freshdesk"
         }
-    }
+    },
+    "SubDomain": {
+        "display_name": "Enter your SubDomain",
+        "description": "Please provide your SubDomain",
+        "type": "domain",
+        "required": true,
+        "type_attributes": {
+            "product": "freshdesk"
+        }
+    }  
 }
